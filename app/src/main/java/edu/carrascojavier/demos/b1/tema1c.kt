@@ -214,7 +214,7 @@ fun PantallaConCarga(cargando: Boolean) {
             var progreso by remember { mutableFloatStateOf(0f) }
 
             Column {
-                Button(onClick = { progreso = progreso + 0.5f }) { Text("+") }
+                Button(onClick = { progreso += 0.5f }) { Text("+") }
                 LinearProgressIndicator(
                     progress = { progreso },
                     modifier = Modifier
@@ -256,7 +256,6 @@ fun EjemploAnimatedVisibility() {
 @Composable
 fun EjemploAnimacionValor() {
     var expandido by remember { mutableStateOf(false) }
-    val context = LocalContext.current
 
     // El tamaño se anima automáticamente al cambiar 'expandido'
     val tamanyoAnimado by animateDpAsState(
@@ -330,7 +329,8 @@ val secciones = listOf(
     SeccionNavegacion("perfil", Icons.Default.Person, "Perfil")
 )
 
-
+// Pantalla principal personalizada para el tema 1c, que combina todos los ejemplos
+// anteriores y añade una barra de navegación inferior.
 @Composable
 fun PantallaTema1c() {
     var seccionActual by remember { mutableStateOf("inicio") }
