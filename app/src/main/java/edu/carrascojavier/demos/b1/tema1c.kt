@@ -322,6 +322,7 @@ data class SeccionNavegacion(
     val etiqueta: String
 )
 
+// Lista de secciones de navegación
 val secciones = listOf(
     SeccionNavegacion("inicio", Icons.Default.Home, "Inicio"),
     SeccionNavegacion("buscar", Icons.Default.Search, "Buscar"),
