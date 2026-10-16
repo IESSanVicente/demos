@@ -1,5 +1,6 @@
 package edu.carrascojavier.demos.b1
 
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
@@ -9,7 +10,7 @@ import androidx.compose.animation.core.spring
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
-import androidx.compose.animation.shrinkVertically
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -156,7 +157,14 @@ fun TarjetaPeliculaCompleta(
             ) {
                 Text(titulo, style = MaterialTheme.typography.titleMedium)
                 AssistChip(
-                    onClick = { },
+                    onClick = {
+                        Log.i("TarjetaPeliculaCompleta", "Puntuación pulsada: $puntuacion")
+                        Log.d("TarjetaPeliculaCompleta", "Puntuación pulsada: $puntuacion")
+                        Log.v("TarjetaPeliculaCompleta", "Puntuación pulsada: $puntuacion")
+                        Log.w("TarjetaPeliculaCompleta", "Puntuación pulsada: $puntuacion")
+                        Log.e("TarjetaPeliculaCompleta", "Puntuación pulsada: $puntuacion")
+                        Log.wtf("TarjetaPeliculaCompleta", "Puntuación pulsada: $puntuacion")
+                    },
                     label = { Text("★ $puntuacion") }
                 )
             }
@@ -240,7 +248,7 @@ fun EjemploAnimatedVisibility() {
         AnimatedVisibility(
             visible = visible,
             enter = fadeIn() + expandVertically(),
-            exit = fadeOut() + shrinkVertically()
+            exit = fadeOut() + slideOutHorizontally()
         ) {
             Card(modifier = Modifier.fillMaxWidth()) {
                 Text(
@@ -291,7 +299,7 @@ fun IndicadorPuntuacion(puntuacion: Float, modifier: Modifier = Modifier) {
         else -> Color(0xFFF44336)   // rojo — mala
     }
 
-    Canvas(modifier = modifier.size(80.dp)) {
+    Canvas(modifier = modifier.size(180.dp)) {
         val tamanyoArco = size.minDimension
         val grosor = tamanyoArco * 0.1f
 

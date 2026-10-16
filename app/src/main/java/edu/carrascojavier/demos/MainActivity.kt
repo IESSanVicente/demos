@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import edu.carrascojavier.demos.b1.PantallaTema1c
+import edu.carrascojavier.demos.b1.PantallaTema1d
 import edu.carrascojavier.demos.ui.theme.DemosTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,7 +16,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             DemosTheme {
-                PantallaTema1c()
+                PantallaTema1d()
             }
         }
     }
@@ -28,5 +29,5 @@ class MainActivity : ComponentActivity() {
 )
 @Composable
 fun PantallaCompletaPreview() {
-    PantallaTema1c()
+    PantallaTema1d()
 }

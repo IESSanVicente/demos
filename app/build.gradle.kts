@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "edu.carrascojavier.demos"
-        minSdk = 29
+        minSdk = 30
         targetSdk = 37
         versionCode = 1
         versionName = "1.0"
@@ -53,4 +53,8 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
 
     implementation(libs.androidx.compose.material.icons.extended)
+
+    // Coil para la carga de imágenes
+    implementation("io.coil-kt.coil3:coil-compose:3.5.0")
+    implementation("io.coil-kt.coil3:coil-network-okhttp:3.5.0")
 }
